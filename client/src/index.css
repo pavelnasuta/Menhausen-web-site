@@ -9,115 +9,67 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
   
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card: var(--bg-card);
+  --color-card-foreground: var(--text-primary);
   
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover: var(--bg-card);
+  --color-popover-foreground: var(--text-primary);
   
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: #111111;
   
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary: var(--bg-card-active);
+  --color-secondary-foreground: var(--text-primary);
   
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted: var(--bg-card);
+  --color-muted-foreground: var(--text-secondary);
   
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent: var(--brand-primary);
+  --color-accent-foreground: #111111;
   
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(210 40% 98%);
   
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  --color-border: var(--border-primary);
+  --color-input: var(--border-secondary);
+  --color-ring: var(--brand-primary);
   
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
+  --color-chart-1: var(--brand-primary);
+  --color-chart-2: #ffffff;
+  --color-chart-3: #808080;
+  --color-chart-4: #404040;
+  --color-chart-5: #202020;
 
-  --font-sans: Manrope, Inter, sans-serif;
-  --font-heading: Manrope, sans-serif;
-  --font-body: Inter, sans-serif;
+  --font-sans: 'PT Sans', sans-serif;
+  --font-heading: 'Roboto Slab', serif;
   
-  --radius: 0.75rem;
+  --radius: 12px;
 }
 
 :root {
-  /* Light Mode - Clean, Masculine, Tech */
-  --background: 210 20% 98%; /* Light blue-grey tint */
-  --foreground: 222 47% 11%; /* Deep charcoal blue */
+  /* Core Palette */
+  --bg-primary: #111111;
+  --bg-card: #1C1C1C; /* Slightly lighter than bg */
+  --bg-card-hover: #252525;
+  --bg-card-active: #2E2E2E;
+  
+  --brand-primary: #E1FF00;
+  --brand-primary-hover: #D1EF00;
+  --brand-primary-muted: #B8B800;
 
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1A1;
+  --text-tertiary: #666666;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
+  --border-primary: #333333;
+  --border-secondary: #222222;
+  --border-accent: #E1FF00;
 
-  --primary: 221 83% 53%; /* Electric Blue */
-  --primary-foreground: 210 40% 98%;
-
-  --secondary: 215 25% 27%; /* Graphite */
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215 16% 47%;
-
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222 47% 11%;
-
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 221 83% 53%;
-
-  --radius: 0.75rem;
-
-  --chart-1: 12 76% 61%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
-}
-
-.dark {
-  /* Dark Mode - Deep, Serious, Premium */
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
-
-  --card: 222 47% 10%; /* Slightly darker than bg or lighter? Let's go slightly lighter */
-  --card-foreground: 210 40% 98%;
-
-  --popover: 222 47% 11%;
-  --popover-foreground: 210 40% 98%;
-
-  --primary: 217 91% 60%;
-  --primary-foreground: 222 47.4% 11.2%;
-
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 224.3 76.3% 48%;
+  /* Mapping to Shadcn/Tailwind generic variables */
+  --radius: 0.75rem; /* 12px */
 }
 
 @layer base {
@@ -126,17 +78,59 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold tracking-tight;
+    line-height: 0.8;
   }
 }
 
-/* Custom Utilities */
-.glass-panel {
-  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/20 shadow-sm;
-}
+@layer utilities {
+  .typography-h1 {
+    @apply font-heading font-bold;
+    font-size: clamp(24px, 5vw, 32px);
+    line-height: 0.9; /* 0.8 is very tight, 0.9 is safer for web */
+  }
+  .typography-h2 {
+    @apply font-heading font-bold;
+    font-size: clamp(20px, 4vw, 28px);
+    line-height: 0.9;
+  }
+  .typography-h3 {
+    @apply font-heading font-bold;
+    font-size: clamp(18px, 3vw, 24px);
+    line-height: 1.0;
+  }
+  .typography-body {
+    @apply font-sans;
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+  .typography-button {
+    @apply font-sans font-medium;
+    font-size: 15px;
+  }
+  
+  .btn-primary {
+    @apply h-[46px] rounded-[12px] bg-primary text-black font-sans font-bold text-[15px] hover:bg-[#D1EF00] transition-colors flex items-center justify-center px-6;
+  }
+  
+  .btn-secondary {
+    @apply h-[46px] rounded-[12px] bg-transparent border border-border text-white font-sans font-bold text-[15px] hover:bg-white/5 transition-colors flex items-center justify-center px-6;
+  }
 
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-indigo-600;
+  .input-field {
+    @apply h-[46px] px-[16px] border border-border rounded-[12px] bg-card text-foreground focus:border-accent focus:outline-none transition-colors;
+  }
+
+  .card-base {
+    @apply bg-card rounded-[12px] p-4 border border-border/50 hover:bg-[#252525] transition-colors;
+  }
+  
+  .card-container {
+    @apply bg-card rounded-[16px] p-6 border border-border/50;
+  }
 }

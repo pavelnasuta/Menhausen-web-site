@@ -3,7 +3,7 @@ import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { StressCard } from "@/components/ui/stress-card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Shield, Lock, Brain, ArrowRight, CheckCircle2, Clock } from "lucide-react";
+import { Shield, Lock, Brain, ArrowRight, CheckCircle2, Clock, Zap } from "lucide-react";
 import heroImage from "@assets/generated_images/Dark_blue_and_graphite_abstract_geometric_shapes_for_hero_background_66e4b19a.png";
 import { Link } from "wouter";
 
@@ -99,6 +99,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Topics Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="typography-h2 mb-6">Topics we cover</h2>
+            <p className="typography-body text-muted-foreground">
+              Targeted protocols for specific life challenges.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "Relationship Problems",
+              "Self-Esteem & Identity",
+              "Anger & Irritability",
+              "Depressive States",
+              "Grief & Loss",
+              "Stress Management",
+              "Burnout Prevention",
+              "Anxiety & Insecurity"
+            ].map((topic, i) => (
+              <div key={i} className="flex items-center p-4 bg-card border border-border/50 rounded-[12px] hover:border-primary/50 transition-colors group">
+                <Zap className="w-4 h-4 text-primary mr-3 group-hover:scale-110 transition-transform" />
+                <span className="font-heading font-bold text-sm md:text-base text-foreground/90">{topic}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-8">
@@ -145,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* Card Previews */}
-      <section className="py-20 bg-white/5 border-y border-border/30">
+      <section className="py-20 bg-card/30 border-y border-border/30">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="text-center mb-16">
             <h2 className="typography-h2 mb-4">Real examples of Stress Cards</h2>

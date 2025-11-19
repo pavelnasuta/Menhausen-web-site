@@ -7,7 +7,11 @@ export default function Privacy() {
 
   return (
     <Layout>
-      <SEO title={t('privacy.title')} />
+      <SEO 
+        title={t('privacy.title')} 
+        description="Privacy policy for Menhausen. Learn how we protect your anonymity and handle your data."
+        canonical="/privacy"
+      />
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-3xl">
         <h1 className="typography-h1 mb-8">{t('privacy.title')}</h1>
         <div className="prose prose-slate lg:prose-lg dark:prose-invert max-w-none">

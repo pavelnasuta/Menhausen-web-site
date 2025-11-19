@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
 import { StressCard } from "@/components/ui/stress-card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -10,13 +11,35 @@ import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const { t } = useTranslation();
+  const heroImageUrl = typeof heroImage === "string" ? heroImage : (heroImage as any)?.src || "/favicon.png";
+
+  const faqItems = [
+    {
+      question: t('faq.q1.question'),
+      answer: t('faq.q1.answer')
+    },
+    {
+      question: t('faq.q2.question'),
+      answer: t('faq.q2.answer')
+    },
+    {
+      question: t('faq.q3.question'),
+      answer: t('faq.q3.answer')
+    }
+  ];
 
   return (
     <Layout>
       <SEO 
         title="Anonymous Stress Management for Men" 
         description="Practical stress cards, CBT & ACT techniques for men. Anonymous, no registration, 3-7 minute daily practices."
+        canonical="/"
+        image={heroImageUrl}
+        keywords="stress management, men's mental health, CBT, ACT, anxiety, burnout, anonymous therapy, stress cards"
       />
+      <StructuredData type="organization" />
+      <StructuredData type="website" />
+      <StructuredData type="faq" data={{ faqItems }} />
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">

@@ -70,6 +70,8 @@ export default function StressCards() {
       <SEO 
         title="Stress Cards Examples - Practical Tools for Men" 
         description="Browse our library of stress cards. Practical, CBT-based questions to manage anxiety, stress, and burnout in 5 minutes or less."
+        canonical="/stress-cards"
+        keywords="stress cards, CBT techniques, anxiety management, stress management tools, men's mental health"
       />
       
       <div className="bg-muted/30 py-16">

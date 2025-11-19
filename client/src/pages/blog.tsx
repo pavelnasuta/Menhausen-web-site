@@ -2,42 +2,17 @@ import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import blog1 from "@assets/generated_images/Calm_water_surface_for_anxiety_blog_post_34484ece.png";
-import blog2 from "@assets/generated_images/Abstract_order_from_chaos_for_stress_management_page_8136dc7e.png";
+import { getAllBlogPosts } from "@/lib/blog-data";
 
 export default function Blog() {
-  const posts = [
-    {
-      slug: "stress-management-techniques",
-      title: "5 Scientific Techniques to Lower Cortisol Immediately",
-      excerpt: "Box breathing is just the beginning. Learn how physiological sighs and cold exposure can reset your nervous system.",
-      category: "Stress Management",
-      date: "Nov 18, 2025",
-      image: blog2
-    },
-    {
-      slug: "burnout-signs-men",
-      title: "The Silent Signs of Burnout in High-Performing Men",
-      excerpt: "It doesn't always look like exhaustion. Sometimes it looks like cynicism, detachment, and a loss of efficacy.",
-      category: "Burnout",
-      date: "Nov 15, 2025",
-      image: blog1
-    },
-    {
-      slug: "anxiety-vs-stress",
-      title: "Anxiety vs. Stress: Understanding the Difference",
-      excerpt: "Stress is a reaction to a threat. Anxiety is a reaction to the stress. Here is how to tell them apart and treat them differently.",
-      category: "Anxiety",
-      date: "Nov 10, 2025",
-      image: blog2
-    }
-  ];
+  const posts = getAllBlogPosts();
 
   return (
     <Layout>
       <SEO 
         title="Men's Mental Health Blog - Menhausen" 
         description="Articles on stress management, burnout prevention, and anxiety specifically for men."
+        canonical="/blog"
       />
       
       <div className="bg-secondary text-secondary-foreground py-16">

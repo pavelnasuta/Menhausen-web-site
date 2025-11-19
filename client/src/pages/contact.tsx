@@ -12,6 +12,8 @@ export default function Contact() {
       <SEO 
         title={t('contact.title')} 
         description="Contact Menhausen support team. We are here to help with any questions about our anonymous stress management app."
+        canonical="/contact"
+        keywords="contact, support, help, men's mental health support"
       />
       
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-4xl">

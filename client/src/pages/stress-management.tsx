@@ -9,6 +9,8 @@ export default function StressManagement() {
       <SEO 
         title="Stress Management for Men - Techniques & Guide" 
         description="Comprehensive guide to stress management for men. Learn why traditional advice fails and how to use CBT and ACT to regain control."
+        canonical="/stress-management"
+        keywords="stress management, men's stress, CBT, ACT, stress techniques, male mental health"
       />
       
       <div className="relative h-[400px] w-full overflow-hidden bg-secondary">

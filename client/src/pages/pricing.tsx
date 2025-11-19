@@ -9,6 +9,8 @@ export default function Pricing() {
       <SEO 
         title="Pricing - Menhausen" 
         description="Simple, transparent pricing. Start for free. Upgrade for advanced stress management modules."
+        canonical="/pricing"
+        keywords="pricing, subscription, premium, stress management pricing, men's mental health cost"
       />
       
       <div className="py-20 container mx-auto px-4 sm:px-8">

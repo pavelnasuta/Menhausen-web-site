@@ -7,7 +7,11 @@ export default function Terms() {
 
   return (
     <Layout>
-      <SEO title={t('terms.title')} />
+      <SEO 
+        title={t('terms.title')} 
+        description="Terms of service for Menhausen. Read our terms and conditions for using our stress management app."
+        canonical="/terms"
+      />
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-3xl">
         <h1 className="typography-h1 mb-8">{t('terms.title')}</h1>
         <div className="prose prose-slate lg:prose-lg dark:prose-invert max-w-none">

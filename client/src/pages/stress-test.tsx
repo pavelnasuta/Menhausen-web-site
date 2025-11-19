@@ -54,6 +54,8 @@ export default function StressTest() {
       <SEO 
         title="1-Minute Stress Test" 
         description="Quick anonymous stress assessment for men. 6 questions to evaluate your current stress levels."
+        canonical="/stress-test"
+        keywords="stress test, stress assessment, stress level, men's mental health test"
       />
       
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-2xl">

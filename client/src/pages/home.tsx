@@ -6,8 +6,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Shield, Lock, Brain, ArrowRight, CheckCircle2, Clock, Zap } from "lucide-react";
 import heroImage from "@assets/generated_images/Dark_blue_and_graphite_abstract_geometric_shapes_for_hero_background_66e4b19a.png";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       <SEO 
@@ -22,28 +25,28 @@ export default function Home() {
             <div className="space-y-8 max-w-2xl">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-medium backdrop-blur-sm">
                 <Shield className="w-4 h-4 mr-2 fill-primary/20" />
-                Private. Secure. Anonymous.
+                {t('hero.badge')}
               </div>
               <h1 className="typography-h1 text-foreground leading-[1.0]">
-                Stress management for men who <span className="text-primary">get things done</span>.
+                {t('hero.title_part1')} <span className="text-primary">{t('hero.title_highlight')}</span>.
               </h1>
               <p className="typography-body text-muted-foreground leading-relaxed max-w-xl">
-                Practical stress cards in Telegram. 3–7 minute scientific practices. No registration, no therapy talk, just tools that work.
+                {t('hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" className="rounded-[12px] px-8 text-[15px] font-bold h-[46px] shadow-[0_0_30px_rgba(225,255,0,0.2)]" asChild>
                   <a href="tg://resolve?domain=ImFineBot&start=miniapp" target="_blank" rel="noopener noreferrer">
-                    Open in Telegram
+                    {t('hero.cta_telegram')}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" className="rounded-[12px] px-8 h-[46px] bg-transparent border-border text-white hover:bg-white/5" asChild>
-                  <Link href="/stress-cards">See Examples</Link>
+                  <Link href="/stress-cards">{t('hero.cta_examples')}</Link>
                 </Button>
               </div>
               <div className="pt-4 text-sm text-muted-foreground flex gap-6 font-sans">
-                <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-primary" /> No registration</span>
-                <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-primary" /> Free basic plan</span>
+                <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-primary" /> {t('hero.no_registration')}</span>
+                <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-primary" /> {t('hero.free_plan')}</span>
               </div>
             </div>
             <div className="relative lg:h-[600px] w-full rounded-[16px] overflow-hidden shadow-2xl border border-white/10 bg-card">
@@ -65,9 +68,9 @@ export default function Home() {
       <section className="py-20 bg-card/30 border-y border-border/30">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="typography-h2 mb-6">Built for the modern male mind</h2>
+            <h2 className="typography-h2 mb-6">{t('features.title')}</h2>
             <p className="typography-body text-muted-foreground">
-              We stripped away the fluff. No long meditations, no "finding your inner child." Just CBT, ACT, and MBCT techniques adapted for rapid application.
+              {t('features.description')}
             </p>
           </div>
 
@@ -75,18 +78,18 @@ export default function Home() {
             {[
               {
                 icon: <Brain className="w-8 h-8 text-primary" />,
-                title: "Cognitive Science",
-                desc: "Based on Cognitive Behavioral Therapy (CBT) and Acceptance & Commitment Therapy (ACT)."
+                title: t('features.cards.science.title'),
+                desc: t('features.cards.science.desc')
               },
               {
                 icon: <Clock className="w-8 h-8 text-primary" />,
-                title: "3-7 Minutes",
-                desc: "Short, punchy sessions designed to fit into a busy workday or commute."
+                title: t('features.cards.time.title'),
+                desc: t('features.cards.time.desc')
               },
               {
                 icon: <Lock className="w-8 h-8 text-primary" />,
-                title: "100% Anonymous",
-                desc: "No login. No email. No personal data collection. Your mental health is your business."
+                title: t('features.cards.privacy.title'),
+                desc: t('features.cards.privacy.desc')
               }
             ].map((feature, i) => (
               <div key={i} className="bg-card p-8 rounded-[16px] shadow-sm border border-border/50 hover:bg-bg-card-hover hover:border-primary/30 transition-all duration-300 group">
@@ -103,22 +106,22 @@ export default function Home() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="typography-h2 mb-6">Topics we cover</h2>
+            <h2 className="typography-h2 mb-6">{t('topics.title')}</h2>
             <p className="typography-body text-muted-foreground">
-              Targeted protocols for specific life challenges.
+              {t('topics.description')}
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "Relationship Problems",
-              "Self-Esteem & Identity",
-              "Anger & Irritability",
-              "Depressive States",
-              "Grief & Loss",
-              "Stress Management",
-              "Burnout Prevention",
-              "Anxiety & Insecurity"
+              t('topics.list.relationships'),
+              t('topics.list.self_esteem'),
+              t('topics.list.anger'),
+              t('topics.list.depression'),
+              t('topics.list.grief'),
+              t('topics.list.stress'),
+              t('topics.list.burnout'),
+              t('topics.list.anxiety')
             ].map((topic, i) => (
               <div key={i} className="flex items-center p-4 bg-card border border-border/50 rounded-[12px] hover:border-primary/50 transition-colors group">
                 <Zap className="w-4 h-4 text-primary mr-3 group-hover:scale-110 transition-transform" />
@@ -134,12 +137,12 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="typography-h2 mb-8">How Menhausen works</h2>
+              <h2 className="typography-h2 mb-8">{t('how_it_works.title')}</h2>
               <div className="space-y-8">
                 {[
-                  { step: "01", title: "Open in Telegram", desc: "Choose a focus area: Stress, Anxiety, or Burnout." },
-                  { step: "02", title: "Complete a Card", desc: "Answer 1-3 targeted questions to reframe your thinking." },
-                  { step: "03", title: "Take Action", desc: "Perform a micro-action to ground the psychological change." }
+                  { step: "01", title: t('how_it_works.step1.title'), desc: t('how_it_works.step1.desc') },
+                  { step: "02", title: t('how_it_works.step2.title'), desc: t('how_it_works.step2.desc') },
+                  { step: "03", title: t('how_it_works.step3.title'), desc: t('how_it_works.step3.desc') }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 group">
                     <span className="text-4xl font-black text-border group-hover:text-primary transition-colors font-heading">{item.step}</span>
@@ -151,22 +154,22 @@ export default function Home() {
                 ))}
               </div>
               <Button className="mt-10" size="lg" asChild>
-                <a href="tg://resolve?domain=ImFineBot&start=miniapp">Start Now</a>
+                <a href="tg://resolve?domain=ImFineBot&start=miniapp">{t('how_it_works.cta')}</a>
               </Button>
             </div>
             <div className="bg-card rounded-[16px] p-8 md:p-12 text-white relative overflow-hidden border border-border">
                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
                <div className="relative z-10">
                  <div className="bg-white/5 backdrop-blur-md rounded-[12px] p-6 mb-4 border border-white/10 shadow-xl">
-                    <p className="text-xs uppercase tracking-wider opacity-70 mb-2 font-sans">Current Card</p>
-                    <h3 className="text-xl font-bold mb-4 font-heading">Burnout Prevention</h3>
+                    <p className="text-xs uppercase tracking-wider opacity-70 mb-2 font-sans">{t('how_it_works.demo.current_card')}</p>
+                    <h3 className="text-xl font-bold mb-4 font-heading">{t('how_it_works.demo.burnout')}</h3>
                     <div className="w-full bg-white/10 h-2 rounded-full mb-4">
                       <div className="bg-primary h-2 rounded-full w-3/4 shadow-[0_0_10px_rgba(225,255,0,0.5)]"></div>
                     </div>
-                    <p className="text-sm opacity-80 font-sans">3 questions remaining</p>
+                    <p className="text-sm opacity-80 font-sans">{t('how_it_works.demo.questions_left')}</p>
                  </div>
                  <div className="bg-white/5 backdrop-blur-md rounded-[12px] p-6 border border-white/5 opacity-40 scale-95">
-                    <h3 className="text-lg font-bold font-heading">Anxiety Check-in</h3>
+                    <h3 className="text-lg font-bold font-heading">{t('how_it_works.demo.anxiety')}</h3>
                  </div>
                </div>
             </div>
@@ -178,43 +181,43 @@ export default function Home() {
       <section className="py-20 bg-card/30 border-y border-border/30">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="text-center mb-16">
-            <h2 className="typography-h2 mb-4">Real examples of Stress Cards</h2>
-            <p className="typography-body text-muted-foreground">No abstract theory. Just questions that change your state.</p>
+            <h2 className="typography-h2 mb-4">{t('examples.title')}</h2>
+            <p className="typography-body text-muted-foreground">{t('examples.subtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <StressCard 
               id="STRESS-04"
-              title="Reframing Negative Thoughts"
+              title={t('examples.cards.reframing.title')}
               questions={[
-                "What specific thought is increasing your stress right now?",
-                "Come up with 3 alternative interpretations of this situation."
+                t('examples.cards.reframing.q1'),
+                t('examples.cards.reframing.q2')
               ]}
-              recommendation="Practice reframing 2 times a week."
+              recommendation={t('examples.cards.reframing.action')}
             />
             <StressCard 
               id="STRESS-07"
-              title="Testing Reality"
+              title={t('examples.cards.testing.title')}
               questions={[
-                "What small experiment can you run to test if this thought is true?",
-                "What results do you expect vs what actually happens?"
+                t('examples.cards.testing.q1'),
+                t('examples.cards.testing.q2')
               ]}
-              recommendation="Run this experiment within 24 hours."
+              recommendation={t('examples.cards.testing.action')}
             />
             <StressCard 
               id="STRESS-02"
-              title="Somatic Awareness"
+              title={t('examples.cards.somatic.title')}
               questions={[
-                "What body signals are you noticing right now?",
-                "Where is the tension located?"
+                t('examples.cards.somatic.q1'),
+                t('examples.cards.somatic.q2')
               ]}
-              recommendation="Rate your tension 1-10 and write it down."
+              recommendation={t('examples.cards.somatic.action')}
             />
           </div>
           
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild>
-              <Link href="/stress-cards">View More Cards</Link>
+              <Link href="/stress-cards">{t('examples.view_more')}</Link>
             </Button>
           </div>
         </div>
@@ -225,18 +228,12 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="typography-h2 mb-6">Who is Menhausen for?</h2>
+              <h2 className="typography-h2 mb-6">{t('target_audience.title')}</h2>
               <p className="text-lg text-muted-foreground mb-8 font-sans">
-                Designed for men aged 25–45 who carry high responsibility loads but often neglect their own maintenance.
+                {t('target_audience.description')}
               </p>
               <ul className="space-y-4">
-                {[
-                  "Entrepreneurs & Founders facing uncertainty",
-                  "IT Specialists & Engineers dealing with burnout",
-                  "Managers & Executives making high-stakes decisions",
-                  "Men who value privacy and dislike traditional therapy",
-                  "Anyone looking for practical, non-spiritual tools"
-                ].map((item, i) => (
+                {(t('target_audience.list', { returnObjects: true }) as string[]).map((item, i) => (
                   <li key={i} className="flex items-start text-white/90 font-sans">
                     <CheckCircle2 className="w-6 h-6 mr-3 text-primary shrink-0" />
                     {item}
@@ -247,15 +244,15 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/5 p-6 rounded-[12px] border border-border hover:border-primary/50 transition-colors">
                 <h3 className="text-4xl font-bold text-primary mb-2 font-heading">25-45</h3>
-                <p className="text-sm text-muted-foreground font-sans">Core Age Group</p>
+                <p className="text-sm text-muted-foreground font-sans">{t('target_audience.stats.age')}</p>
               </div>
               <div className="bg-white/5 p-6 rounded-[12px] border border-border hover:border-primary/50 transition-colors">
                 <h3 className="text-4xl font-bold text-primary mb-2 font-heading">100%</h3>
-                <p className="text-sm text-muted-foreground font-sans">Anonymous</p>
+                <p className="text-sm text-muted-foreground font-sans">{t('target_audience.stats.anonymous')}</p>
               </div>
               <div className="bg-white/5 p-6 rounded-[12px] border border-border col-span-2 hover:border-primary/50 transition-colors">
                 <h3 className="text-4xl font-bold text-primary mb-2 font-heading">AES-256</h3>
-                <p className="text-sm text-muted-foreground font-sans">Encryption Standard. Your data never leaves your device.</p>
+                <p className="text-sm text-muted-foreground font-sans">{t('target_audience.stats.encryption')}</p>
               </div>
             </div>
           </div>
@@ -265,24 +262,24 @@ export default function Home() {
       {/* FAQ */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
-          <h2 className="typography-h2 mb-12 text-center">Frequently Asked Questions</h2>
+          <h2 className="typography-h2 mb-12 text-center">{t('faq.title')}</h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-border">
-              <AccordionTrigger className="font-heading hover:text-primary">Is this a replacement for therapy?</AccordionTrigger>
+              <AccordionTrigger className="font-heading hover:text-primary">{t('faq.q1.question')}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground font-sans">
-                No. Menhausen is a self-help tool based on therapeutic principles (CBT, ACT). It is designed for stress management and prevention. If you are in crisis or suffering from severe depression, please seek professional help.
+                {t('faq.q1.answer')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2" className="border-border">
-              <AccordionTrigger className="font-heading hover:text-primary">Is it really anonymous?</AccordionTrigger>
+              <AccordionTrigger className="font-heading hover:text-primary">{t('faq.q2.question')}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground font-sans">
-                Yes. We do not require email, phone number (other than what Telegram uses), or real names. All your journal entries are stored locally or encrypted. We do not build user profiles for advertising.
+                {t('faq.q2.answer')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3" className="border-border">
-              <AccordionTrigger className="font-heading hover:text-primary">How much does it cost?</AccordionTrigger>
+              <AccordionTrigger className="font-heading hover:text-primary">{t('faq.q3.question')}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground font-sans">
-                Menhausen operates on a Freemium model. Basic stress cards are free forever. Advanced modules for specific issues (Deep Burnout, Public Speaking Anxiety, etc.) are available via a Premium subscription.
+                {t('faq.q3.answer')}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -292,13 +289,13 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-24 bg-primary text-black">
         <div className="container mx-auto px-4 sm:px-8 text-center">
-          <h2 className="typography-h1 mb-6 text-black">Take control of your stress today.</h2>
+          <h2 className="typography-h1 mb-6 text-black">{t('cta_final.title')}</h2>
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-sans font-medium text-black/80">
-            No registration. No credit card required for start. Just open Telegram and begin your first practice.
+            {t('cta_final.description')}
           </p>
           <Button size="lg" variant="secondary" className="h-16 px-10 text-[15px] rounded-[12px] shadow-2xl bg-black text-white hover:bg-black/80" asChild>
             <a href="tg://resolve?domain=ImFineBot&start=miniapp">
-              Open Menhausen in Telegram
+              {t('cta_final.button')}
             </a>
           </Button>
         </div>

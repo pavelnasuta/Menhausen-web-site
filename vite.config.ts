@@ -38,6 +38,17 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  esbuild: {
+    jsx: "automatic",
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".ts": "tsx",
+        ".tsx": "tsx",
+      },
+    },
+  },
   server: {
     host: "0.0.0.0",
     allowedHosts: true,

@@ -145,5 +145,73 @@ export const en = {
   },
   common: {
     micro_action: "Micro-Action"
+  },
+  contact: {
+    title: "Contact Us",
+    subtitle: "Have questions or feedback? We are here to help.",
+    email: "Email Support",
+    telegram: "Telegram Support",
+    response_time: "We usually reply within 24 hours.",
+    office: "Headquarters",
+    office_address: "Digital Only. We operate globally."
+  },
+  privacy: {
+    title: "Privacy Policy",
+    intro: "Menhausen is built on a simple principle: Your mental health data is yours, not ours. We do not sell data. We do not build advertising profiles.",
+    section1: {
+      title: "1. Anonymity by Design",
+      content: "We do not require you to create an account with an email or password. We rely on Telegram's authentication system to verify you are a real user, but we do not store your Telegram ID alongside any personal health data in a way that can be easily linked by third parties."
+    },
+    section2: {
+      title: "2. Data Collection",
+      content: "We collect the minimum amount of data necessary to make the app function:",
+      list: [
+        "Usage Data: Which cards you open (to recommend relevant content).",
+        "Subscription Status: Whether you have a premium plan.",
+        "Local Data: Your journal entries and personal answers are primarily stored locally on your device or encrypted."
+      ]
+    },
+    section3: {
+      title: "3. Encryption",
+      content: "Any sensitive data synced to our servers is encrypted using AES-256 standards. This means even our database administrators cannot read the content of your stress journals."
+    },
+    section4: {
+      title: "4. No Third-Party Tracking",
+      content: "We do not use Facebook Pixel, Google AdSense, or any other cross-site tracking cookies. What happens in Menhausen stays in Menhausen."
+    },
+    section5: {
+      title: "5. Not a Medical Service",
+      content: "Menhausen is a self-help tool for stress management. It is not a replacement for professional medical advice, diagnosis, or treatment. If you are experiencing a medical emergency, call your local emergency services immediately."
+    },
+    last_updated: "Last updated: November 19, 2025"
+  },
+  terms: {
+    title: "Terms of Service",
+    intro: "By using Menhausen, you agree to the following terms.",
+    section1: {
+      title: "1. Acceptance of Terms",
+      content: "By accessing or using our Telegram Mini App and website, you agree to be bound by these Terms of Service."
+    },
+    section2: {
+      title: "2. Medical Disclaimer",
+      content: "Menhausen is not a medical device and does not provide medical advice. The content is for informational and self-help purposes only. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition."
+    },
+    section3: {
+      title: "3. User Conduct",
+      content: "You agree to use the service only for lawful purposes. You are responsible for all activities under your usage of the app."
+    },
+    section4: {
+      title: "4. Intellectual Property",
+      content: "All content, features, and functionality are owned by Menhausen and are protected by international copyright, trademark, and other intellectual property laws."
+    },
+    section5: {
+      title: "5. Limitation of Liability",
+      content: "In no event shall Menhausen be liable for any indirect, incidental, special, consequential or punitive damages."
+    }
+  },
+  cookie_consent: {
+    message: "We use cookies to ensure you get the best experience on our website. By continuing to use the site, you agree to our use of cookies.",
+    accept: "Got it",
+    decline: "Decline"
   }
 };

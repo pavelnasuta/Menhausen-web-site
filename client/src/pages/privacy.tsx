@@ -1,49 +1,56 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { useTranslation } from "react-i18next";
 
 export default function Privacy() {
+  const { t } = useTranslation();
+
   return (
     <Layout>
-      <SEO title="Privacy Policy" />
+      <SEO title={t('privacy.title')} />
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-3xl">
-        <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-        <div className="prose prose-slate lg:prose-lg dark:prose-invert">
-          <p className="lead text-xl text-muted-foreground mb-8">
-            Menhausen is built on a simple principle: <strong>Your mental health data is yours, not ours.</strong> We do not sell data. We do not build advertising profiles.
+        <h1 className="typography-h1 mb-8">{t('privacy.title')}</h1>
+        <div className="prose prose-slate lg:prose-lg dark:prose-invert max-w-none">
+          <p className="lead text-xl text-muted-foreground mb-8 font-sans">
+            {t('privacy.intro')}
           </p>
 
-          <h3>1. Anonymity by Design</h3>
-          <p>
-            We do not require you to create an account with an email or password. We rely on Telegram's authentication system to verify you are a real user, but we do not store your Telegram ID alongside any personal health data in a way that can be easily linked by third parties.
-          </p>
+          <div className="space-y-8">
+            <section>
+              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section1.title')}</h3>
+              <p className="text-muted-foreground font-sans">{t('privacy.section1.content')}</p>
+            </section>
 
-          <h3>2. Data Collection</h3>
-          <p>
-            We collect the minimum amount of data necessary to make the app function:
-          </p>
-          <ul>
-            <li><strong>Usage Data:</strong> Which cards you open (to recommend relevant content).</li>
-            <li><strong>Subscription Status:</strong> Whether you have a premium plan.</li>
-            <li><strong>Local Data:</strong> Your journal entries and personal answers are primarily stored locally on your device or encrypted.</li>
-          </ul>
+            <section>
+              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section2.title')}</h3>
+              <p className="text-muted-foreground font-sans mb-4">{t('privacy.section2.content')}</p>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground font-sans">
+                {(t('privacy.section2.list', { returnObjects: true }) as string[]).map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </section>
 
-          <h3>3. Encryption</h3>
-          <p>
-            Any sensitive data synced to our servers is encrypted using AES-256 standards. This means even our database administrators cannot read the content of your stress journals.
-          </p>
+            <section>
+              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section3.title')}</h3>
+              <p className="text-muted-foreground font-sans">{t('privacy.section3.content')}</p>
+            </section>
 
-          <h3>4. No Third-Party Tracking</h3>
-          <p>
-            We do not use Facebook Pixel, Google AdSense, or any other cross-site tracking cookies. What happens in Menhausen stays in Menhausen.
-          </p>
+            <section>
+              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section4.title')}</h3>
+              <p className="text-muted-foreground font-sans">{t('privacy.section4.content')}</p>
+            </section>
 
-          <h3>5. Not a Medical Service</h3>
-          <p>
-            Menhausen is a self-help tool for stress management. It is not a replacement for professional medical advice, diagnosis, or treatment. If you are experiencing a medical emergency, call your local emergency services immediately.
-          </p>
+            <section>
+              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section5.title')}</h3>
+              <div className="p-4 border-l-4 border-primary bg-primary/5 rounded-r-lg">
+                <p className="text-foreground font-sans font-medium">{t('privacy.section5.content')}</p>
+              </div>
+            </section>
 
-          <div className="mt-12 pt-8 border-t border-border">
-            <p className="text-sm text-muted-foreground">Last updated: November 19, 2025</p>
+            <div className="mt-12 pt-8 border-t border-border">
+              <p className="text-sm text-muted-foreground font-sans">{t('privacy.last_updated')}</p>
+            </div>
           </div>
         </div>
       </div>
